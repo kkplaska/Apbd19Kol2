@@ -2,8 +2,8 @@
 
 public class AddWashingMachineDto
 {
-    public WashingMachineDto WashingMachine { get; set; }
-    public List<AvaialbleProgramDto> AvaialblePrograms { get; set; }
+    public WashingMachineToAddDto WashingMachine { get; set; }
+    public List<AvaialbleProgramDto> AvailablePrograms { get; set; }
 }
 
 public class WashingMachineToAddDto

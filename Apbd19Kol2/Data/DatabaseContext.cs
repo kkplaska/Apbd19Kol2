@@ -30,9 +30,9 @@ public class DatabaseContext : DbContext
         
         modelBuilder.Entity<ProgramModel>().HasData(new List<ProgramModel>()
         {
-            new ProgramModel() { ProgramId = 1, Name = "Program 1", DurationTime = 60, TemperatureCelsius = 50},
-            new ProgramModel() { ProgramId = 2, Name = "Program 2", DurationTime = 60, TemperatureCelsius = 50},
-            new ProgramModel() { ProgramId = 3, Name = "Program 3", DurationTime = 60, TemperatureCelsius = 50},
+            new ProgramModel() { ProgramId = 1, Name = "Quick Wash", DurationTime = 60, TemperatureCelsius = 50},
+            new ProgramModel() { ProgramId = 2, Name = "Cotton Cycle", DurationTime = 60, TemperatureCelsius = 50},
+            new ProgramModel() { ProgramId = 3, Name = "Synthetic", DurationTime = 60, TemperatureCelsius = 50},
         });
         
         modelBuilder.Entity<WashingMachine>().HasData(new List<WashingMachine>()

@@ -54,7 +54,7 @@ public class DbService : IDbService
         try
         {
             var machineWithId = await _context.WashingMachines
-                .FirstOrDefaultAsync(o => o.SerialNumber == dto.WashingMachine.Serial);
+                .FirstOrDefaultAsync(o => o.SerialNumber == dto.WashingMachine.SerialNumber);
             
             if (machineWithId != null)
                 throw new ConflictException("Washing machine with that serial number already exists");
@@ -62,12 +62,12 @@ public class DbService : IDbService
             var washingMachine = new WashingMachine()
             {
                 MaxWeight = dto.WashingMachine.MaxWeight,
-                SerialNumber = dto.WashingMachine.Serial
+                SerialNumber = dto.WashingMachine.SerialNumber
             };
             var washingMachineEntityEntry = await _context.WashingMachines.AddAsync(washingMachine);
 
 
-            foreach (var program in dto.AvaialblePrograms)
+            foreach (var program in dto.AvailablePrograms)
             {
                 var checkProgram = await _context.Programs.FirstOrDefaultAsync(x => x.Name == program.ProgramName);
                 if (checkProgram is null)
