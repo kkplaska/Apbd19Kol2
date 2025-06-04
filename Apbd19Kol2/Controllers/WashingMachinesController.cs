@@ -15,12 +15,12 @@ public class WashingMachinesController : ControllerBase
         _dbService = dbService;
     }
     
-    [HttpPut("{orderId}/fulfill")]
-    public async Task<IActionResult> FulfillOrder(int orderId, FulfillOrderDto dto)
+    [HttpPost]
+    public async Task<IActionResult> AddWashingMachine(AddWashingMachineDto dto)
     {
         try
         {
-            await _dbService.FulfillOrder(orderId, dto);
+            await _dbService.AddWashingMachine(dto);
             return Ok();
         }
         catch (NotFoundException e)
