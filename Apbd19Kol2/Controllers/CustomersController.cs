@@ -15,7 +15,7 @@ public class CustomersController : ControllerBase
         _dbService = dbService;
     }
 
-    [HttpGet("{id}/purchases")]
+    [HttpGet("{customerId}/purchases")]
     public async Task<IActionResult> GetPurchasesByCustomerId(int customerId)
     {
         try
