@@ -70,6 +70,8 @@ public class DbService : IDbService
                 SerialNumber = dto.WashingMachine.SerialNumber
             });
 
+            var washingMachineId = washingMachineEntityEntry.Entity.WashingMachineId;
+
             foreach (var program in dto.AvailablePrograms)
             {
                 var checkProgram = await _context.Programs.FirstOrDefaultAsync(x => x.Name == program.ProgramName);
@@ -83,7 +85,7 @@ public class DbService : IDbService
                 
                 await _context.AvailablePrograms.AddAsync(new AvailableProgram()
                 {
-                    WashingMachineId = washingMachineEntityEntry.Entity.WashingMachineId,
+                    WashingMachineId = washingMachineId,
                     ProgramId = checkProgram.ProgramId,
                     Price = program.Price
                 });
