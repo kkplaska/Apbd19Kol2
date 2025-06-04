@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Apbd19Kol2.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250604131218_Init4")]
-    partial class Init4
+    [Migration("20250604132154_Init5")]
+    partial class Init5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -153,21 +153,21 @@ namespace Apbd19Kol2.Migrations
                         {
                             ProgramId = 1,
                             DurationTime = 60,
-                            Name = "Program 1",
+                            Name = "Quick Wash",
                             TemperatureCelsius = 50
                         },
                         new
                         {
                             ProgramId = 2,
                             DurationTime = 60,
-                            Name = "Program 2",
+                            Name = "Cotton Cycle",
                             TemperatureCelsius = 50
                         },
                         new
                         {
                             ProgramId = 3,
                             DurationTime = 60,
-                            Name = "Program 3",
+                            Name = "Synthetic",
                             TemperatureCelsius = 50
                         });
                 });

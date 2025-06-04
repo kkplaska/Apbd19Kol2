@@ -59,19 +59,27 @@ public class DbService : IDbService
             if (machineWithId != null)
                 throw new ConflictException("Washing machine with that serial number already exists");
 
-            var washingMachine = new WashingMachine()
+            if (dto.WashingMachine.MaxWeight < 8)
+            {
+                throw new ConflictException("Washing machine must have a minimum weight of 8");
+            }
+            
+            var washingMachineEntityEntry = await _context.WashingMachines.AddAsync(new WashingMachine()
             {
                 MaxWeight = dto.WashingMachine.MaxWeight,
                 SerialNumber = dto.WashingMachine.SerialNumber
-            };
-            var washingMachineEntityEntry = await _context.WashingMachines.AddAsync(washingMachine);
-
+            });
 
             foreach (var program in dto.AvailablePrograms)
             {
                 var checkProgram = await _context.Programs.FirstOrDefaultAsync(x => x.Name == program.ProgramName);
                 if (checkProgram is null)
                     throw new NotFoundException($"Program {program.ProgramName} does not exist");
+
+                if (program.Price > 25)
+                {
+                    throw new ConflictException($"Program {program.ProgramName} price is too large");
+                }
                 
                 await _context.AvailablePrograms.AddAsync(new AvailableProgram()
                 {

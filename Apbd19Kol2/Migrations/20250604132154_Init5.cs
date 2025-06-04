@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Apbd19Kol2.Migrations
 {
     /// <inheritdoc />
-    public partial class Init4 : Migration
+    public partial class Init5 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -125,9 +125,9 @@ namespace Apbd19Kol2.Migrations
                 columns: new[] { "ProgramId", "DurationTime", "Name", "TemperatureCelsius" },
                 values: new object[,]
                 {
-                    { 1, 60, "Program 1", 50 },
-                    { 2, 60, "Program 2", 50 },
-                    { 3, 60, "Program 3", 50 }
+                    { 1, 60, "Quick Wash", 50 },
+                    { 2, 60, "Cotton Cycle", 50 },
+                    { 3, 60, "Synthetic", 50 }
                 });
 
             migrationBuilder.InsertData(

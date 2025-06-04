@@ -150,21 +150,21 @@ namespace Apbd19Kol2.Migrations
                         {
                             ProgramId = 1,
                             DurationTime = 60,
-                            Name = "Program 1",
+                            Name = "Quick Wash",
                             TemperatureCelsius = 50
                         },
                         new
                         {
                             ProgramId = 2,
                             DurationTime = 60,
-                            Name = "Program 2",
+                            Name = "Cotton Cycle",
                             TemperatureCelsius = 50
                         },
                         new
                         {
                             ProgramId = 3,
                             DurationTime = 60,
-                            Name = "Program 3",
+                            Name = "Synthetic",
                             TemperatureCelsius = 50
                         });
                 });
