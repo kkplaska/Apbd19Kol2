@@ -51,9 +51,9 @@ public class DatabaseContext : DbContext
         
         modelBuilder.Entity<AvailableProgram>().HasData(new List<AvailableProgram>()
         {
-            new AvailableProgram() { AvailableProgramId = 1, WashingMachineId = 1, ProgramId = 3, Price = 10.0},
-            new AvailableProgram() { AvailableProgramId = 2, WashingMachineId = 1, ProgramId = 5, Price = 15.0},
-            new AvailableProgram() { AvailableProgramId = 3, WashingMachineId = 1, ProgramId = 8, Price = 12.0},
+            new AvailableProgram() { AvailableProgramId = 1, WashingMachineId = 1, ProgramId = 1, Price = 10.0},
+            new AvailableProgram() { AvailableProgramId = 2, WashingMachineId = 1, ProgramId = 2, Price = 15.0},
+            new AvailableProgram() { AvailableProgramId = 3, WashingMachineId = 1, ProgramId = 3, Price = 12.0},
         });
     }
 }

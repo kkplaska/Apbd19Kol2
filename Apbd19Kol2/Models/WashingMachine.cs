@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Apbd19Kol2.Models;
 
-[Table("Customer")]
+[Table("Washing_Machine")]
 public class WashingMachine
 {
     [Key]
